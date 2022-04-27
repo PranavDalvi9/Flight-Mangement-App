@@ -1,5 +1,49 @@
 {
   "Flights": [
+    {
+      "airlines": "Indigo",
+      "from": "Mumbai Domestic",
+      "to": "Goa",
+      "cost": "2000",
+      "FromTime": "12.00",
+      "ToTime": "15.00",
+      "pnr": 404242657746,
+      "capacity": "150",
+      "id": 1
+    },
+    {
+      "airlines": "Indigo",
+      "from": "Mumbai Domestic",
+      "to": "Kolkatta",
+      "cost": "3000",
+      "FromTime": "14.00",
+      "ToTime": "18.00",
+      "pnr": 135318122706,
+      "capacity": "150",
+      "id": 2
+    },
+    {
+      "airlines": "Indigo",
+      "from": "Mumbai Domestic",
+      "to": "Nagpur",
+      "cost": "3000",
+      "FromTime": "14.00",
+      "ToTime": "18.00",
+      "pnr": 469649820535,
+      "capacity": "150",
+      "id": 3
+    },
+    {
+      "airlines": "Indigo",
+      "from": "Goa",
+      "to": "Nagpur",
+      "cost": "3000",
+      "FromTime": "9.00",
+      "ToTime": "11.00",
+      "pnr": 987685280979,
+      "capacity": "150",
+      "id": 4
+    }
   ],
   "Airports": [
     {
