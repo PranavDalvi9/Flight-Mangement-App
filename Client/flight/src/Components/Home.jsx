@@ -6,6 +6,14 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
 export default function Home() {
 
     const [from, setFrom] = React.useState('');
@@ -20,7 +28,7 @@ export default function Home() {
     const handleSearch = () => {
         const disp1 = data.filter((e) => {
             // console.log("eee",e)
-            if ((from === e.from) && (to === e.to)) {
+            if ((from == e.from) && (to == e.to)) {
                 return e
             }
         })
@@ -33,6 +41,7 @@ export default function Home() {
     return (
         <div>
             <div>
+                {/* <button>Login</button> */}
                 <Box
                     component="form"
                     sx={{
@@ -92,6 +101,7 @@ export default function Home() {
                     
                 </table>
             </div>
+            
         </div>
     )
 }
