@@ -10,20 +10,23 @@ export default function Home() {
 
     const [from, setFrom] = React.useState('');
     const [to, setTo] = React.useState('');
-    const[data, setData] = useState([])
+    const [data, setData] = useState([])
+    const [disp , setDisp] = useState([])
 
-    useEffect(() =>{
+    useEffect(() => {
         axios.get("http://localhost:8080/Flights").then((res) => setData(res.data))
-    },[])
+    }, [])
 
     const handleSearch = () => {
-        const disp = data.filter((e) => {
+        const disp1 = data.filter((e) => {
             // console.log("eee",e)
-            if((from === e.from) && (to === e.to)){
+            if ((from === e.from) && (to === e.to)) {
                 return e
             }
         })
-        console.log("disp",disp)
+        setDisp(disp1)
+        console.log("disp", disp1)
+        console.log("apend",disp)
     }
 
 
@@ -42,22 +45,52 @@ export default function Home() {
                         id="outlined-name"
                         label="FROM"
                         // value={name}
-                        onChange={(e)=> {setFrom(e.target.value)}}
+                        onChange={(e) => { setFrom(e.target.value) }}
                     /><br />
 
                     <TextField
                         id="outlined-name"
                         label="TO"
                         // value={name}
-                        onChange={(e)=> {setTo(e.target.value)}}
-                    /><br/>
+                        onChange={(e) => { setTo(e.target.value) }}
+                    /><br />
 
                     <Button variant="contained" onClick={handleSearch}>Search</Button>
                 </Box>
             </div>
 
             <div>
-                
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Cost</th>
+                        <th>From Time</th>
+                        <th>To Time</th>
+                        <th>PNR</th>
+                        <th>Capacity</th>
+                    </tr>
+
+                    {
+                        disp.map((e) => (
+                            <tr>
+                        <td>{e.airlines}</td>
+                        <td>{e.from}</td>
+                        <td>{e.to}</td>
+                        <td>{e.cost}</td>
+                        <td>{e.FromTime}</td>
+                        <td>{e.ToTime}</td>
+                        <td>{e.pnr}</td>
+                        <td>{e.capacity}</td>
+                    </tr>
+                        ))
+                    }
+
+                    
+                    
+                </table>
             </div>
         </div>
     )
