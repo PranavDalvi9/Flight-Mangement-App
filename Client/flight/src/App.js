@@ -14,7 +14,7 @@ const PrivateRoute = ({isAuthenticate, children}) => {
 
 function App() {
   const navigate = useNavigate()
-  const isAuthenticate = true
+  const isAuthenticate = false
 
   return (
     <div className="App">
@@ -26,9 +26,11 @@ function App() {
 <Routes>
 <Route path='/login' element={<Login/>}></Route>
 
-<Route path='/' element={
+<Route path='/' element={<Home/>}></Route>
+
+{/* <Route path='/' element={
   <PrivateRoute isAuthenticate={isAuthenticate}><Home/></PrivateRoute>
-}></Route>
+}></Route> */}
 
 <Route path='/addFlight' element={
   <PrivateRoute isAuthenticate={isAuthenticate}><AddFlight/></PrivateRoute>
