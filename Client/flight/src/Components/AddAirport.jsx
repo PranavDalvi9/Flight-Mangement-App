@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
+import { postAirportData } from '../Redux/Airport/Actions';
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 export default function AddAirport() {
     const [airport, setAirport] = useState("")
-    
-    const onAdd =() => {
-        axios.post("http://localhost:8080/Airports", {airport}).then((res) => console.log(res.data))
+    const dispatch = useDispatch()
+
+    const onAdd = () => {
+        console.log("data", airport)
+        // axios.post("http://localhost:8080/Airports", {airport}).then((res) => console.log(res.data))
+        dispatch(postAirportData(airport))
+        console.log("data")
     }
+    // console.log(airport)
 
     return (
         <div>
@@ -25,7 +31,7 @@ export default function AddAirport() {
                     autoComplete="off"
                 >
 
-                    <TextField label="ADD AIRPORT " variant="filled" color="success" focused onChange={(e)=> setAirport(e.target.value) } /><br />
+                    <TextField label="ADD AIRPORT " variant="filled" color="success" focused onChange={(e) => setAirport(e.target.value)} /><br />
 
                     <Button variant="contained" onClick={onAdd}>Add</Button>
 

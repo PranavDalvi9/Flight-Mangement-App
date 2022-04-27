@@ -43,6 +43,17 @@
       "pnr": 987685280979,
       "capacity": "150",
       "id": 4
+    },
+    {
+      "airlines": "Air India ",
+      "from": "Kolkata",
+      "to": "Patna",
+      "cost": "5000",
+      "FromTime": "18.00",
+      "ToTime": "20.00",
+      "pnr": 830119520666,
+      "capacity": "123",
+      "id": 5
     }
   ],
   "Airports": [

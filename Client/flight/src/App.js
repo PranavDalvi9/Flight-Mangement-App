@@ -39,6 +39,7 @@ function App() {
 <Route path='/addAirport' element={
   <PrivateRoute isAuthenticate={isAuthenticate}><AddAirport/></PrivateRoute>
 }></Route>  
+
 </Routes>
       
     </div>
