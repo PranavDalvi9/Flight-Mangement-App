@@ -1,5 +1,6 @@
 {
-  "Flights": [],
+  "Flights": [
+  ],
   "Airports": [
     {
       "airport": "Mumbai",
