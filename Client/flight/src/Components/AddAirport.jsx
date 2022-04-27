@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 export default function AddAirport() {
+    const [airport, setAirport] = useState("")
+    
+    const onAdd =() => {
+        axios.post("http://localhost:8080/Airports", {airport}).then((res) => console.log(res.data))
+    }
+
     return (
         <div>
 
@@ -18,9 +25,9 @@ export default function AddAirport() {
                     autoComplete="off"
                 >
 
-                    <TextField label="ADD AIRPORT " variant="filled" color="success" focused /><br />
+                    <TextField label="ADD AIRPORT " variant="filled" color="success" focused onChange={(e)=> setAirport(e.target.value) } /><br />
 
-                    <Button variant="contained">Add</Button>
+                    <Button variant="contained" onClick={onAdd}>Add</Button>
 
                 </Box>
             </div>

@@ -7,11 +7,9 @@ import Button from '@mui/material/Button';
 
 export default function Home() {
 
-    const [name, setName] = React.useState('');
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value);
-        console.log(event.target.value)
-    };
+    const [from, setFrom] = React.useState('');
+    const [to, setTo] = React.useState('');
+
 
     return (
         <div>
@@ -28,14 +26,14 @@ export default function Home() {
                         id="outlined-name"
                         label="FROM"
                         // value={name}
-                        onChange={handleChange}
+                        onChange={(e)=> {setFrom(e.target.value)}}
                     /><br />
 
                     <TextField
                         id="outlined-name"
                         label="TO"
                         // value={name}
-                        onChange={handleChange}
+                        onChange={(e)=> {setTo(e.target.value)}}
                     /><br/>
 
                     <Button variant="contained">Search</Button>

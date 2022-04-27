@@ -14,7 +14,7 @@ const PrivateRoute = ({isAuthenticate, children}) => {
 
 function App() {
   const navigate = useNavigate()
-  const isAuthenticate = false
+  const isAuthenticate = true
 
   return (
     <div className="App">
