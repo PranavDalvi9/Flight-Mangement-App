@@ -12,13 +12,13 @@ export default function AddAirport() {
                 <Box
                     component="form"
                     sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
+                        '& > :not(style)': { m: 1, width: '75ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
 
-                    <TextField label="Airpoer " variant="filled" color="success" focused /><br />
+                    <TextField label="ADD AIRPORT " variant="filled" color="success" focused /><br />
 
                     <Button variant="contained">Add</Button>
 

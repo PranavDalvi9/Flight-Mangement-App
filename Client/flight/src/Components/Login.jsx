@@ -12,15 +12,15 @@ export default function Login() {
                 <Box
                     component="form"
                     sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
+                        '& > :not(style)': { m: 1, width: '35ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
 
-                    <TextField label="User Name" variant="filled" color="success" focused />
+                    <TextField label="USER NAME" variant="filled" color="success" focused /><br />
 
-                    <TextField label="Password" variant="filled" color="success" focused /><br />
+                    <TextField label="PASSWORD" variant="filled" color="success" focused /><br />
 
                     <Button variant="contained">Login</Button>
 
