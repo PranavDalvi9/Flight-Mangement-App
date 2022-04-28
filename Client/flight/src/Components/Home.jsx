@@ -84,7 +84,7 @@ export default function Home() {
 
                     {
                         disp.map((e) => (
-                            <tr>
+                            <tr key = {e.id}>
                         <td>{e.airlines}</td>
                         <td>{e.from}</td>
                         <td>{e.to}</td>
