@@ -6,6 +6,7 @@ import AddAirport from './Components/AddAirport';
 import AddFlight from './Components/AddFlight';
 import Login from './Components/Login';
 import Home from './Components/Home';
+import Navbar from './Components/NavBar';
 
 
 const PrivateRoute = ({isAuthenticate, children}) => {
@@ -22,11 +23,14 @@ function App() {
       <AddFlight/>
       <Login/>
       <Home/> */}
+      <Navbar/>
 
 <Routes>
+<Route path='/' element={<Home/>}></Route>
+
 <Route path='/login' element={<Login/>}></Route>
 
-<Route path='/' element={<Home/>}></Route>
+
 
 {/* <Route path='/' element={
   <PrivateRoute isAuthenticate={isAuthenticate}><Home/></PrivateRoute>

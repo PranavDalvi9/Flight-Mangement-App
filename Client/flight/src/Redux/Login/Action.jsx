@@ -38,3 +38,4 @@ export const login = ({username, password}) => (dispatch)=> {
     .then((res) => dispatch(loginSuccess({username,token:res.token})))
     .catch((err) => dispatch(loginFailure()))
 }
+
