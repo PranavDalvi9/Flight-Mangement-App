@@ -2,39 +2,36 @@
 export const FLIGHT_ADD_LOADING = "FLIGHT_ADD_LOADING";
 export const FLIGHT_ADD_SUCCESS = "FLIGHT_ADD_SUCCESS";
 export const FLIGHT_ADD_FAILURE = "FLIGHT_ADD_FAILURE";
-// export const FLIGHT_GET = "FLIGHT_GET";
-// export const LOGOUT = "LOGOUT"
- 
+
+
 export const flightAddLoading = () => ({
-    type : FLIGHT_ADD_LOADING
+  type: FLIGHT_ADD_LOADING
 });
 
 export const flightAddSuccess = (payload) => ({
-    type : FLIGHT_ADD_SUCCESS,
-    payload
+  type: FLIGHT_ADD_SUCCESS,
+  payload
 });
 
-export const flightAddFailure =() => ({
-    type: FLIGHT_ADD_FAILURE
+export const flightAddFailure = () => ({
+  type: FLIGHT_ADD_FAILURE
 })
 
-// export const logout = () => ({
-  // type : LOGOUT
-// })
 
-export const login = ({username, password}) => (dispatch)=> {
-    // const dispatch = useDispatch();
 
-    dispatch(loginLoading())
-    fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
-      method: "POST",
-      body: JSON.stringify({username,password}),
-      headers:{
-        "Content-Type": "application/json"
-      }
-    })
+export const postFlight = (data) => (dispatch) => {
+  // const dispatch = useDispatch();
+
+  dispatch(flightAddLoading())
+  fetch("http://localhost:8080/Flights", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
     .then((res) => res.json())
-    .then((res) => dispatch(loginSuccess({username,token:res.token})))
-    .catch((err) => dispatch(loginFailure()))
+    .then((res) => dispatch(flightAddSuccess(res.data)))
+    .catch((err) => dispatch(flightAddFailure()))
 }
 

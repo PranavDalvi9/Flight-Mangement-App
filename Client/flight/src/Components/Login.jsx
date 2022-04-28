@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {login} from "../Redux/Login/Action"
+import { login } from "../Redux/Login/Action"
 import { Navigate } from 'react-router';
 
 
@@ -11,16 +11,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
     const dispatch = useDispatch()
-    const {isAuthenticate} = useSelector((store) => store.login)
+    const { isAuthenticate } = useSelector((store) => store.login)
     console.log(isAuthenticate)
-    const [username , setUsername] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState("")
     const handleLogin = () => {
-        dispatch(login({username, password}))
-    
+        dispatch(login({ username, password }))
+
     }
-    if(isAuthenticate){
-        return <Navigate to={"/"}/>
+    if (isAuthenticate) {
+        return <Navigate to={"/"} />
     }
 
 

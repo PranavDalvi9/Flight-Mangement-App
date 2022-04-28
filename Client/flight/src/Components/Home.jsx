@@ -6,20 +6,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
 export default function Home() {
 
     const [from, setFrom] = React.useState('');
     const [to, setTo] = React.useState('');
     const [data, setData] = useState([])
-    const [disp , setDisp] = useState([])
+    const [disp, setDisp] = useState([])
 
     useEffect(() => {
         axios.get("http://localhost:8080/Flights").then((res) => setData(res.data))
@@ -34,14 +26,14 @@ export default function Home() {
         })
         setDisp(disp1)
         console.log("disp", disp1)
-        console.log("apend",disp)
+        console.log("apend", disp)
     }
 
 
     return (
         <div>
             <div>
-                {/* <button>Login</button> */}
+
                 <Box
                     component="form"
                     sx={{
@@ -84,24 +76,24 @@ export default function Home() {
 
                     {
                         disp.map((e) => (
-                            <tr key = {e.id}>
-                        <td>{e.airlines}</td>
-                        <td>{e.from}</td>
-                        <td>{e.to}</td>
-                        <td>{e.cost}</td>
-                        <td>{e.FromTime}</td>
-                        <td>{e.ToTime}</td>
-                        <td>{e.pnr}</td>
-                        <td>{e.capacity}</td>
-                    </tr>
+                            <tr key={e.id}>
+                                <td>{e.airlines}</td>
+                                <td>{e.from}</td>
+                                <td>{e.to}</td>
+                                <td>{e.cost}</td>
+                                <td>{e.FromTime}</td>
+                                <td>{e.ToTime}</td>
+                                <td>{e.pnr}</td>
+                                <td>{e.capacity}</td>
+                            </tr>
                         ))
                     }
 
-                    
-                    
+
+
                 </table>
             </div>
-            
+
         </div>
     )
 }

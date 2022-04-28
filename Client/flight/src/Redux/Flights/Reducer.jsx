@@ -1,41 +1,27 @@
-import { LOGIN_FAILURE, LOGIN_LOADING, LOGIN_SUCCESS, LOGOUT } from "./Action"
+import { FLIGHT_ADD_LOADING, FLIGHT_ADD_SUCCESS, FLIGHT_ADD_FAILURE } from "./Action"
 
 const initState = {
     error: false,
     loading: false,
-    isAuthenticate: false,
-    token: "",
-    userName: ""
+    data: []
 };
 
-export const loginReducer = (store = initState, { type, payload }) => {
+export const flightReducer = (store = initState, { type, payload }) => {
     switch (type) {
-        case LOGIN_LOADING:
+        case FLIGHT_ADD_LOADING:
             return { ...store, loading: true };
 
-        case LOGIN_SUCCESS:
+        case FLIGHT_ADD_SUCCESS:
             return {
                 ...store,
                 error: false,
                 loading: false,
-                isAuthenticate: true,
-                token: payload.token,
-                userName: payload.username
+                data: [...store.data, payload]
             };
 
-        case LOGIN_FAILURE:
+        case FLIGHT_ADD_FAILURE:
             return {
                 ...initState
-            }
-
-        case LOGOUT:
-            return {
-                ...store,
-                error: false,
-                loading: false,
-                isAuthenticate: false,
-                token: "",
-                userName: ""
             }
 
         default:
