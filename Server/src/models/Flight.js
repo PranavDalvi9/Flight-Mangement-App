@@ -41,3 +41,15 @@ const flightSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("flight", flightSchema);
+
+
+// {
+//   "airlines": "",
+//   "from": "",
+//   "to": "",
+//   "cost" : "",
+//    "FromTime" : "",
+//    "ToTime" : "",
+//    "pnr" :"",
+//    "capacity": ""
+// }
