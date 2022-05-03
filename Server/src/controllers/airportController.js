@@ -21,7 +21,7 @@ router.get("", async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
-
+//find by id
 router.delete("/:id", async (req, res) => {
   try {
     const airport = await Airport.findByIdAndDelete(req.params.id)
