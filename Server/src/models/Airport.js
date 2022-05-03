@@ -12,3 +12,8 @@ const airportSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("airport", airportSchema);
+
+
+// {
+//   "airport" : "",
+// }
